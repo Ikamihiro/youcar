@@ -1,0 +1,11 @@
+// Hero Custom Styles
+
+.hero {
+    background-color: $primary;
+    padding: 3.5rem;
+
+    &-brand {
+        font-weight: bold;
+        color: $light;
+    }
+}

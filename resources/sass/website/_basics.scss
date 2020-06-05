@@ -1,0 +1,19 @@
+// Basics Custom Styles
+
+// Navbar Styles Override
+.navbar {
+    padding: 0;
+
+    .navbar-nav {
+        // No styles
+
+        .nav-link{
+            color: $light;
+        }
+
+        .nav-item:hover, .nav-item:active {
+            background-color: $danger;
+        }
+    }
+}
+
