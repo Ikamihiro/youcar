@@ -12,3 +12,11 @@
 
 // Import Custom Hero
 @import 'website/hero';
+
+// Import Custom Cars Styles
+@import 'website/cards';
+
+// General Custom Styles
+body {
+    background-color: $light;
+}

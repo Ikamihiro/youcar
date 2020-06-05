@@ -1,5 +1,14 @@
 // Basics Custom Styles
 
+// Custom Button Danger Styles
+.btn-danger {
+    background-color: $red;
+
+    &:hover, &:active {
+        background-color: brown;
+    }
+}
+
 // Navbar Styles Override
 .navbar {
     .navbar-nav {
@@ -19,5 +28,13 @@
             }
         }
     }
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $primary;
+    color: $light;
 }
 

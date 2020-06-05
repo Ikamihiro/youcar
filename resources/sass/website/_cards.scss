@@ -1,43 +1,38 @@
 // Cards
-.card {
-    background: $bg-color-light;
-    border-radius: $border-radius;
-    display: flex;
-    flex-direction: column;
-  
-    .card-header,
-    .card-body,
-    .card-footer {
-      padding: $layout-spacing-lg;
-      padding-bottom: 0;
-  
-      &:last-child {
-        padding-bottom: $layout-spacing-lg;
-      }
-    }
-  
-    .card-body {
-      flex: 1 1 auto;
-    }
-  
-    .card-image {
-      padding-top: $layout-spacing-lg;
-  
-      &:first-child {
-        padding-top: 0;
-  
-        img {
-          border-top-left-radius: $border-radius;
-          border-top-right-radius: $border-radius;
+.card-carros {
+    margin: 3% 0 3% 0;
+
+
+    .card {
+        background: white;
+        display: flex;
+        flex-direction: column;
+
+        .card-header,
+        .card-body,
+        .card-footer {
+            padding: 3%;
+            padding-bottom: 0;
+        
+            &:last-child {
+                padding-bottom: 3%;
+            }
         }
-      }
-  
-      &:last-child {
-        img {
-          border-bottom-left-radius: $border-radius;
-          border-bottom-right-radius: $border-radius;
+      
+        .card-body {
+            flex: 1 1 auto;
         }
-      }
+
+        .card-footer {
+            background-color: $red;
+            color: $light;
+
+            .btn-link {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
     }
-  }
+}
   
