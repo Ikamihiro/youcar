@@ -2,17 +2,21 @@
 
 // Navbar Styles Override
 .navbar {
-    padding: 0;
-
     .navbar-nav {
-        // No styles
+        .nav-item {
+            text-align: center;
 
-        .nav-link{
-            color: $light;
-        }
+            .nav-link{
+                align-self: center;
+                font-size: large;
+                font-weight: 900;
+                color: $light;
 
-        .nav-item:hover, .nav-item:active {
-            background-color: $danger;
+                &:active {
+                    background-color: $danger;
+                    color: white;
+                }
+            }
         }
     }
 }

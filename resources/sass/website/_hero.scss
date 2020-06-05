@@ -2,10 +2,39 @@
 
 .hero {
     background-color: $primary;
-    padding: 3.5rem;
+    padding: 3rem;
+
+    @media (max-width: 767.98px) {
+        padding: 1rem;
+
+        .hero-brand {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-form .row {
+            flex-direction: column;
+            align-content: center;
+
+            .col-md-auto {
+                margin-top: 1rem;
+                padding-left: 5%;
+                padding-right: 5%;
+                justify-content: center;
+                display: flex;
+            }
+        }
+    }
 
     &-brand {
         font-weight: bold;
         color: $light;
+
+        img {
+            width: 15rem;
+            height: 7rem;
+        }
     }
 }

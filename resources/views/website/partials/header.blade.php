@@ -1,16 +1,22 @@
 <header>
     <section class="hero">
-        <div class="container">
-            <div class="row justify-content-between">
+        <div class="container-lg">
+            <div class="row justify-content-between align-items-center">
                 <div class="col-md-auto">
-                    <a href="#" class="hero-brand">
-                        <h2>YouCar</h2>
+                    <a href="{{ route('root') }}" class="hero-brand">
+                        <img src="{{ asset('resources/images/youcar_logo.png') }}" alt="">
                     </a>
                 </div>
                 <div class="col-md-auto">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <form class="hero-form">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-md-auto">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Pesquise algo ..." aria-label="Search">
+                            </div>
+                            <div class="col-md-auto">
+                                <button class="btn btn-danger my-2 my-sm-0" type="submit">Pesquisar</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -28,13 +34,13 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <div class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">INICIO</a>
+                        <a href="{{ route('root') }}" class="nav-link">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">SOBRE</a>
+                        <a href="{{ route('root') }}" class="nav-link">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">CONTATO</a>
+                        <a href="{{ route('root') }}" class="nav-link">Contato</a>
                     </li>
                 </div>
             </div>
