@@ -27,6 +27,16 @@
             background-color: $red;
             color: $light;
 
+            @media (max-width: 767.98px) {
+                .row {
+                    flex-direction: column;
+
+                    .col-md-auto {
+                        width: auto;
+                    }
+                }
+            }
+
             .btn-link {
                 color: white;
                 text-decoration: none;

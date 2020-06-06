@@ -11034,6 +11034,16 @@ a.text-dark:focus {
   color: #eeeeee;
 }
 
+@media (max-width: 767.98px) {
+  .card-carros .card .card-footer .row {
+    flex-direction: column;
+  }
+
+  .card-carros .card .card-footer .row .col-md-auto {
+    width: auto;
+  }
+}
+
 .card-carros .card .card-footer .btn-link {
   color: white;
   text-decoration: none;
@@ -11042,5 +11052,45 @@ a.text-dark:focus {
 
 body {
   background-color: #eeeeee;
+}
+
+.filtro-carros {
+  padding: 0;
+}
+
+@media (max-width: 767.98px) {
+  .filtro-carros .row {
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+
+  .filtro-carros .row .enviar-filtro {
+    width: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-carros {
+    padding: 0 2rem 2rem 2rem;
+    margin-top: 0;
+  }
+
+  .card-carros .row {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-carros .row .card {
+    margin-top: 2rem;
+  }
+
+  .card-carros .ver-mais {
+    flex-direction: column;
+  }
+
+  .card-carros .ver-mais .col-md-auto {
+    width: auto;
+  }
 }
 
