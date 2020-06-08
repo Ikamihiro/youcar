@@ -14,7 +14,9 @@
                                 <input class="form-control mr-sm-2" type="search" placeholder="Pesquise algo ..." aria-label="Search">
                             </div>
                             <div class="col-md-auto">
-                                <button class="btn btn-danger my-2 my-sm-0" type="submit">Pesquisar</button>
+                                <button class="btn btn-danger my-2 my-sm-0" type="submit">
+                                    <i class="fas fa-search"></i> Pesquisar
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -32,13 +34,19 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <div class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">Início</a>
+                        <a href="{{ route('root') }}" class="nav-link">
+                            <i class="fas fa-home"></i> Início
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">Sobre</a>
+                        <a href="{{ route('root') }}" class="nav-link">
+                            Sobre
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">Contato</a>
+                        <a href="{{ route('root') }}" class="nav-link">
+                            Contato
+                        </a>
                     </li>
                 </div>
             </div>

@@ -16999,6 +16999,7 @@ readers do not read off random characters that represent icons */
 }
 
 .navbar .navbar-nav .nav-item {
+  margin-right: 2rem;
   text-align: center;
 }
 

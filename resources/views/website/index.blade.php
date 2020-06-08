@@ -42,7 +42,7 @@
                         <div class="col-md-auto enviar-filtro">
                             <div class="form-group">
                                 <button type="submit" class="btn btn-danger">
-                                    Encontrar carro
+                                    <i class="fas fa-search"></i> Encontrar carro
                                 </button>
                             </div>
                         </div>
