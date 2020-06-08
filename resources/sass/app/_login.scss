@@ -1,0 +1,22 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-size: 13pt;
+    background: linear-gradient(to right, #303841, #3a4750);
+
+    .card {
+        border: none;
+
+        .card-body {
+            color: #303841;
+
+            .btn {
+                padding-left: 3rem;
+                padding-right: 3rem;
+                font-size: 13pt;
+            }
+        }
+    }
+}

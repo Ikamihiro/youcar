@@ -1,0 +1,14 @@
+.navbar {
+    padding: 0;
+
+    .navbar-nav {
+        .nav-item {
+            margin-right: 2rem;
+
+            .nav-link{
+                font-size: 1.1rem;
+                color: white;
+            }
+        }
+    }
+}
