@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-secondary shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom">
         <a class="navbar-brand ml-3" href="{{ url('/home') }}">
             <img class="navbar-logo img-fluid" src="{{ asset('resources/images/youcar_logo.png') }}">
         </a>
@@ -15,8 +15,14 @@
                             <i class="fas fa-car"></i> Véiculos
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-search"></i> Consultar</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> Inserir</a>
+                            <a class="dropdown-item" href="{{ route('admin.veiculos.index') }}">
+                                <i class="fas fa-search"></i> 
+                                Consultar
+                            </a>
+                            <a class="dropdown-item" href="{{ route('admin.veiculos.create') }}">
+                                <i class="fas fa-plus"></i> 
+                                Inserir
+                            </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">

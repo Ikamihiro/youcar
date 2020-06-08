@@ -9,8 +9,8 @@ class Veiculo extends Model
     protected $table = 'veiculos';
     protected $fillable = [
         'nome',
-        'marca',
         'valor',
+        'marca_id',
         'quilometragem',
         'transmissao',
         'condicao',
@@ -22,6 +22,11 @@ class Veiculo extends Model
 
     public function imagens()
     {
-        return $this->hasMany('App\VeiculoImage');
+        return $this->hasMany('App\VeiculoImagem');
+    }
+
+    public function marca()
+    {
+        return $this->belongsTo('App\Marca');
     }
 }

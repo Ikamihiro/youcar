@@ -1,4 +1,4 @@
-<footer class="footer page-footer font-small bg-primary p-5">
+<footer class="footer page-footer font-small bg-light p-5">
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-md-4">

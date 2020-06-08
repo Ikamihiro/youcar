@@ -17019,12 +17019,12 @@ readers do not read off random characters that represent icons */
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #303841;
-  color: #eeeeee;
+  background-color: #eeeeee;
+  color: #303841;
 }
 
 .hero {
-  background-color: #303841;
+  background-color: #eeeeee;
   padding: 3rem;
 }
 
