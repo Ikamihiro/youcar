@@ -121,6 +121,15 @@
                         <textarea name="detalhes" id="detalhes" class="form-control"></textarea>
                     </div>
                 </div>
+                <div class="col-sm-12 col-xs-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Imagens:</strong>
+                        <input type="file" id="imagens" class="form-control" multiple="">
+                        <div class="imagens" id="visualizar-imanges">
+
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-auto">
