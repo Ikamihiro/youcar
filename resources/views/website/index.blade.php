@@ -11,7 +11,9 @@
                             <div class="form-group">
                                 <select name="marca" class="form-control" id="marcas_select">
                                     <option disabled selected>Marca</option>
-                                    <option value="MT">Fiat</option>
+                                    @foreach ($marcas as $marca)
+                                        <option value="{{ $marca->id }}">{{ $marca->nome }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -19,7 +21,9 @@
                             <div class="form-group">
                                 <select name="modelo" class="form-control" id="modelos_select">
                                     <option disabled selected>Modelo</option>
-                                    <option value="MT">Uno</option>
+                                    @foreach ($modelos as $item)
+                                        <option value="{{ $item->nome }}">{{ $item->nome }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -37,7 +41,9 @@
                             <div class="form-group">
                                 <select name="ano" class="form-control" id="anos_select">
                                     <option disabled selected>Ano</option>
-                                    <option value="MT">2008</option>
+                                    @foreach ($modelos as $item)
+                                        <option value="{{ $item->ano }}">{{ $item->ano }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -55,138 +61,58 @@
         <section class="card-carros">
             <div class="container-lg">
                 <div class="row">
-                    <div class="col">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="row justify-content-center align-items-center">
-                                    {{-- Titulo --}}
-                                    <div class="col-md-auto">
-                                        <h5 class="card-title"><strong>Lorem ipsum</strong></h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    {{-- Imagem --}}
-                                    <div class="col-md-auto">
-                                        <img class="card-img-top h-100 lazy img-fluid" src="{{ asset('resources/images/card-car.jpg') }}" alt="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    {{-- Dados do Carro --}}
-                                    <div class="col">
-                                        <div class="row justify-content-center align-items-center mt-3">
-                                            {{-- Preço --}}
-                                            <div class="col-md-auto">
-                                                <p><strong>R$ XX.XXX,XX</strong></p>
-                                            </div>
+                    @foreach ($veiculos as $veiculo)
+                        <div class="col">
+                            <div class="card shadow">
+                                <div class="card-body">
+                                    <div class="row justify-content-center align-items-center">
+                                        {{-- Titulo --}}
+                                        <div class="col-md-auto">
+                                            <h5 class="card-title"><strong>{{ $veiculo->nome }}</strong></h5>
                                         </div>
-                                        <p class="card-text mb-2"><strong>Ano: </strong>20XX</p>
-                                        <p class="card-text mb-2"><strong>Local: </strong>Cuiabá-MT</p>
-                                        <p class="card-text mb-4"><strong>Quilometragem: </strong>XXXX km</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                {{-- Ir para detalhes --}}
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-md-auto">
-                                        <a href="{{ route('root') }}" class="btn btn-link">
-                                            Estou interessado
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="row justify-content-center align-items-center">
-                                    {{-- Titulo --}}
-                                    <div class="col-md-auto">
-                                        <h5 class="card-title"><strong>Lorem ipsum</strong></h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    {{-- Imagem --}}
-                                    <div class="col-md-auto">
-                                        <img class="card-img-top h-100 lazy img-fluid" src="{{ asset('resources/images/card-car.jpg') }}" alt="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    {{-- Dados do Carro --}}
-                                    <div class="col">
-                                        <div class="row justify-content-center align-items-center mt-3">
-                                            {{-- Preço --}}
-                                            <div class="col-md-auto">
-                                                <p><strong>R$ XX.XXX,XX</strong></p>
-                                            </div>
+                                    <div class="row">
+                                        {{-- Imagem --}}
+                                        <div class="col-md-auto">
+                                            @foreach ($veiculo->imagens as $imagem)
+                                                @if ($loop->first)
+                                                    <img class="card-img-top img-fluid" src="{{ asset($imagem->path) }}" alt="">
+                                                @endif
+                                            @endforeach
                                         </div>
-                                        <p class="card-text mb-2"><strong>Ano: </strong>20XX</p>
-                                        <p class="card-text mb-2"><strong>Local: </strong>Cuiabá-MT</p>
-                                        <p class="card-text mb-4"><strong>Quilometragem: </strong>XXXX km</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-footer">
-                                {{-- Ir para detalhes --}}
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-md-auto">
-                                        <a href="{{ route('root') }}" class="btn btn-link">
-                                            Estou interessado
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow">
-                            <div class="card-body">
-                                <div class="row justify-content-center align-items-center">
-                                    {{-- Titulo --}}
-                                    <div class="col-md-auto">
-                                        <h5 class="card-title"><strong>Lorem ipsum</strong></h5>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    {{-- Imagem --}}
-                                    <div class="col-md-auto">
-                                        <img class="card-img-top h-100 lazy img-fluid" src="{{ asset('resources/images/card-car.jpg') }}" alt="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    {{-- Dados do Carro --}}
-                                    <div class="col">
-                                        <div class="row justify-content-center align-items-center mt-3">
-                                            {{-- Preço --}}
-                                            <div class="col-md-auto">
-                                                <p><strong>R$ XX.XXX,XX</strong></p>
+                                    <div class="row">
+                                        {{-- Dados do Carro --}}
+                                        <div class="col">
+                                            <div class="row justify-content-center align-items-center mt-3">
+                                                {{-- Preço --}}
+                                                <div class="col-md-auto">
+                                                    <p><strong>R$ {{ $veiculo->valor }}</strong></p>
+                                                </div>
                                             </div>
+                                            <p class="card-text mb-2"><strong>Ano: </strong>{{ $veiculo->ano }}</p>
+                                            <p class="card-text mb-2"><strong>Condição: </strong>{{ $veiculo->condicao }}</p>
+                                            <p class="card-text mb-4"><strong>Quilometragem: </strong>{{ $veiculo->quilometragem }} km</p>
                                         </div>
-                                        <p class="card-text mb-2"><strong>Ano: </strong>20XX</p>
-                                        <p class="card-text mb-2"><strong>Local: </strong>Cuiabá-MT</p>
-                                        <p class="card-text mb-4"><strong>Quilometragem: </strong>XXXX km</p>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    {{-- Ir para detalhes --}}
+                                    <div class="row justify-content-center align-items-center">
+                                        <div class="col-md-auto">
+                                            <a href="{{ route('root') }}" class="btn btn-link">
+                                                Estou interessado
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer">
-                                {{-- Ir para detalhes --}}
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-md-auto">
-                                        <a href="{{ route('root') }}" class="btn btn-link">
-                                            Estou interessado
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </div>   
+                    @endforeach               
                 </div>
                 <div class="row ver-mais justify-content-center align-items-center mt-3">
                     <div class="col-md-auto">
-                        <button class="btn btn-danger">
-                            Ver Mais ...
-                        </button>
+                        {!! $veiculos->links() !!}
                     </div>
                 </div>
             </div>

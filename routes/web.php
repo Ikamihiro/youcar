@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 // Rota raiz da aplicação que exibi a Página Inicial
-Route::get('/', function () {
-    return view('website.index');
-})->name('root');
+Route::get('/', 'HomeController@index')->name('root');
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +29,11 @@ Route::get('/', function () {
 Auth::routes(['register' => false]);
 
 // Rota raiz para a Plataforma de administração da aplicação
-Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index')->name('admin');
+
+// Redimensionamento dinâmico de imagem
+// exemplo.com/resize/<base64dir>&<largura>&<altura>&<imagem.ext>
+Route::get('resize/{parameters}', 'Resize\ResizeImageController@show');
 
 // Grupo de rotas para os CRUDs essenciais da aplicação
 Route::group(['prefix' => 'admin', "middleware" => ["auth"], 'as' => 'admin.'], function () {

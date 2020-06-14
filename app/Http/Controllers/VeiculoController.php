@@ -55,7 +55,7 @@ class VeiculoController extends Controller
             foreach($images as $image) {
                 $imagePath = Storage::disk('public')->put($veiculo->nome . $veiculo->id . '/', $image);
                 VeiculoImagem::create([
-                    'path' => '/uploads/veiculos/' . $imagePath,
+                    'path' => '/storage/' . $imagePath,
                     'legenda' => $veiculo->nome,
                     'veiculo_id' => $veiculo->id
                 ]);
