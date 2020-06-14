@@ -15,7 +15,7 @@ class CreateVeiculosTable extends Migration
     {
         Schema::create('veiculos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
+            $table->string('modelo');
             $table->decimal('valor', 8, 2);
             $table->integer('quilometragem');
             $table->string('transmissao');
@@ -23,6 +23,7 @@ class CreateVeiculosTable extends Migration
             $table->string('combustivel');
             $table->integer('ano');
             $table->string('cor');
+            $table->string('imagem_capa');
             $table->text('detalhes')->nullable();
             $table->unsignedBigInteger('marca_id');
             $table->foreign('marca_id')->references('id')->on('marcas')->onDelete('cascade');

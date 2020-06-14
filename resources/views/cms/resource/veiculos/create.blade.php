@@ -27,8 +27,8 @@
             <div class="row">
                 <div class="col-sm-12 col-xs-12 col-md-12">
                     <div class="form-group">
-                        <strong>Nome do Veículo:</strong>
-                        <input type="text" name="nome" class="form-control" placeholder="Digite o nome...">
+                        <strong>Modelo do Veículo:</strong>
+                        <input type="text" name="modelo" class="form-control" placeholder="Digite o nome do modelo...">
                     </div>
                 </div>
                 <div class="col-sm-12 col-xs-12 col-md-12">
@@ -119,6 +119,12 @@
                     <div class="form-group">
                         <strong>Detalhes:</strong>
                         <textarea name="detalhes" id="detalhes" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xs-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Selecione uma imagem para capa:</strong>
+                        <input type="file" name="imagem_capa" id="imagen" class="form-control-file">
                     </div>
                 </div>
             </div>

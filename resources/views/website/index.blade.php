@@ -9,7 +9,7 @@
                     <div class="row justify-content-center align-items-center">
                         <div class="col-md-2">
                             <div class="form-group">
-                                <select name="marca" class="form-control" id="marcas_select">
+                                <select name="marca" class="custom-select" id="marcas_select">
                                     <option disabled selected>Marca</option>
                                     @foreach ($marcas as $marca)
                                         <option value="{{ $marca->id }}">{{ $marca->nome }}</option>
@@ -19,17 +19,17 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <select name="modelo" class="form-control" id="modelos_select">
+                                <select name="modelo" class="custom-select" id="modelos_select">
                                     <option disabled selected>Modelo</option>
                                     @foreach ($modelos as $item)
-                                        <option value="{{ $item->nome }}">{{ $item->nome }}</option>
+                                        <option value="{{ $item->modelo }}">{{ $item->modelo }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <select name="preco" class="form-control" id="precos_select">
+                                <select name="preco" class="custom-select" id="precos_select">
                                     <option disabled selected>Preço</option>
                                     <option value="MT">Menor que R$ 50.000,00</option>
                                     <option value="MT">Entre R$ 50.000,00 e R$ 100.000,00</option>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-md-2">
                             <div class="form-group">
-                                <select name="ano" class="form-control" id="anos_select">
+                                <select name="ano" class="custom-select" id="anos_select">
                                     <option disabled selected>Ano</option>
                                     @foreach ($modelos as $item)
                                         <option value="{{ $item->ano }}">{{ $item->ano }}</option>
@@ -68,7 +68,7 @@
                                     <div class="row justify-content-center align-items-center">
                                         {{-- Titulo --}}
                                         <div class="col-md-auto">
-                                            <h5 class="card-title"><strong>{{ $veiculo->nome }}</strong></h5>
+                                            <h5 class="card-title"><strong>{{ $veiculo->modelo }}</strong></h5>
                                         </div>
                                     </div>
                                     <div class="row">

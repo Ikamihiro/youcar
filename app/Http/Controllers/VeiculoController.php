@@ -36,7 +36,7 @@ class VeiculoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nome' => 'required',
+            'modelo' => 'required',
             'marca_id' => 'required',
             'valor' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
             'quilometragem' => 'required',
@@ -53,10 +53,10 @@ class VeiculoController extends Controller
 
         if($veiculo->save()) {
             foreach($images as $image) {
-                $imagePath = Storage::disk('public')->put($veiculo->nome . $veiculo->id . '/', $image);
+                $imagePath = Storage::disk('public')->put($veiculo->modelo . $veiculo->id . '/', $image);
                 VeiculoImagem::create([
                     'path' => '/storage/' . $imagePath,
-                    'legenda' => $veiculo->nome,
+                    'legenda' => $veiculo->modelo,
                     'veiculo_id' => $veiculo->id
                 ]);
             }
@@ -87,7 +87,7 @@ class VeiculoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nome' => 'required',
+            'modelo' => 'required',
             'marca_id' => 'required',
             'valor' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
             'quilometragem' => 'required',

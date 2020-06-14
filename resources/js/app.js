@@ -2,7 +2,7 @@ require('./bootstrap');
 
 require('justifiedGallery');
 
-// Toda vez que anexar uma imagem,
+// Toda vez que anexar uma imagem na galeria,
 // dispara a função preview_image()
 $("#images").change(function () {
     preview_image();

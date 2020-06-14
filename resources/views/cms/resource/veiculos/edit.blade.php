@@ -28,8 +28,8 @@
             <div class="row">
                 <div class="col-sm-12 col-xs-12 col-md-12">
                     <div class="form-group">
-                        <strong>Nome do Veículo:</strong>
-                        <input type="text" name="nome" value="{{ $veiculo->nome }}" class="form-control" placeholder="Digite o nome...">
+                        <strong>Modelo do Veículo:</strong>
+                        <input type="text" name="modelo" value="{{ $veiculo->modelo }}" class="form-control" placeholder="Digite o nome do modelo...">
                     </div>
                 </div>
                 <div class="col-sm-12 col-xs-12 col-md-12">
@@ -133,7 +133,7 @@
             </div>
             <div class="card">
                 <div class="card-header h5">Selecione imagens para excluir</div>
-                .card
+                
             </div>
             <div class="card">
                 <div class="card-header h5">Carregue as novas imagens do carro</div>

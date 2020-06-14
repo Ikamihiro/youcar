@@ -8,7 +8,7 @@ class Veiculo extends Model
 {
     protected $table = 'veiculos';
     protected $fillable = [
-        'nome',
+        'modelo',
         'valor',
         'marca_id',
         'quilometragem',
@@ -28,5 +28,10 @@ class Veiculo extends Model
     public function marca()
     {
         return $this->belongsTo('App\Marca');
+    }
+
+    public function equipamentos()
+    {
+        return $this->belongsToMany(Equipamento::class, 'veiculo_equipamento');
     }
 }

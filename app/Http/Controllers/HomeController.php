@@ -18,7 +18,7 @@ class HomeController extends Controller
         $veiculos = Veiculo::with('imagens')
             ->orderBy('created_at', 'desc')
             ->paginate(3);
-        $modelos = Veiculo::all(['nome', 'anlar']);
+        $modelos = Veiculo::all(['modelo', 'ano']);
         $marcas = Marca::all(['id', 'nome']);
         return view('website.index', compact('veiculos', 'modelos', 'marcas'))
             ->with('i', (request()->input('page', 1) - 1) * 3);
