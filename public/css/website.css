@@ -17040,17 +17040,23 @@ readers do not read off random characters that represent icons */
     margin-bottom: 2.5rem;
   }
 
-  .hero .hero-form .row {
+  .hero .hero-social {
+    display: flex;
+    align-items: center;
     flex-direction: column;
-    align-content: center;
   }
 
-  .hero .hero-form .row .col-md-auto {
-    margin-top: 1rem;
-    padding-left: 5%;
-    padding-right: 5%;
-    justify-content: center;
-    display: flex;
+  .hero .hero-social .row {
+    flex-direction: row;
+  }
+
+  .hero .hero-social .row .col-md-auto {
+    width: auto;
+  }
+
+  .hero .hero-social .row .col-md-auto .btn {
+    font-size: 2rem;
+    padding: 0;
   }
 }
 
@@ -17062,6 +17068,11 @@ readers do not read off random characters that represent icons */
 .hero-brand img {
   width: 15rem;
   height: 7rem;
+}
+
+.hero .btn {
+  font-size: 2.5rem;
+  padding: 0;
 }
 
 .card-carros {

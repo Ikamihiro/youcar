@@ -7,19 +7,29 @@
                         <img src="{{ asset('resources/images/youcar_logo.png') }}" alt="">
                     </a>
                 </div>
-                <div class="col-md-auto">
-                    <form class="hero-form">
-                        <div class="row justify-content-between align-items-center">
-                            <div class="col-md-auto">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Pesquise algo ..." aria-label="Search">
-                            </div>
-                            <div class="col-md-auto">
-                                <button class="btn btn-danger my-2 my-sm-0" type="submit">
-                                    <i class="fas fa-search"></i> Pesquisar
-                                </button>
-                            </div>
+                <div class="col-md-auto hero-social">
+                    <div class="row justify-content-end align-items-center">
+                        <div class="col-md-auto">
+                            <strong>Nos siga nas redes sociais</strong>
                         </div>
-                    </form>
+                    </div>
+                    <div class="row justify-content-end align-items-center">
+                        <div class="col-md-auto">
+                            <a href="#" class="btn btn-link btn-social">
+                                <i class="fab fa-whatsapp-square"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-auto">
+                            <a href="#" class="btn btn-link btn-social">
+                                <i class="fab fa-instagram-square"></i>
+                            </a>
+                        </div>
+                        <div class="col-md-auto">
+                            <a href="#" class="btn btn-link btn-social">
+                                <i class="fab fa-facebook-square"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

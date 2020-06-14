@@ -7,39 +7,41 @@
             <div class="container-lg">
                 <form action="{{ route('root') }}">
                     <div class="row justify-content-center align-items-center">
-                        <div class="col-md-auto">
+                        <div class="col-md-2">
                             <div class="form-group">
-                                <select name="estados" class="form-control" id="estados_select">
-                                    <option disabled selected>Estado</option>
-                                    <option value="MT">Mato Grosso</option>
+                                <select name="marca" class="form-control" id="marcas_select">
+                                    <option disabled selected>Marca</option>
+                                    <option value="MT">Fiat</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-auto">
+                        <div class="col-md-2">
                             <div class="form-group">
-                                <select name="estados" class="form-control" id="estados_select">
-                                    <option disabled selected>Estado</option>
-                                    <option value="MT">Mato Grosso</option>
+                                <select name="modelo" class="form-control" id="modelos_select">
+                                    <option disabled selected>Modelo</option>
+                                    <option value="MT">Uno</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-auto">
+                        <div class="col-md-2">
                             <div class="form-group">
-                                <select name="estados" class="form-control" id="estados_select">
-                                    <option disabled selected>Estado</option>
-                                    <option value="MT">Mato Grosso</option>
+                                <select name="preco" class="form-control" id="precos_select">
+                                    <option disabled selected>Preço</option>
+                                    <option value="MT">Menor que R$ 50.000,00</option>
+                                    <option value="MT">Entre R$ 50.000,00 e R$ 100.000,00</option>
+                                    <option value="MT">Maior que R$ 100.000,00</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-auto">
+                        <div class="col-md-2">
                             <div class="form-group">
-                                <select name="estados" class="form-control" id="estados_select">
-                                    <option disabled selected>Estado</option>
-                                    <option value="MT">Mato Grosso</option>
+                                <select name="ano" class="form-control" id="anos_select">
+                                    <option disabled selected>Ano</option>
+                                    <option value="MT">2008</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-auto enviar-filtro">
+                        <div class="col-md-2 enviar-filtro">
                             <div class="form-group">
                                 <button type="submit" class="btn btn-danger">
                                     <i class="fas fa-search"></i> Encontrar carro
