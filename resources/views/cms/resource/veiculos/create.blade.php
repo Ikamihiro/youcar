@@ -22,7 +22,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{ route('admin.veiculos.store') }}" method="POST">
+        <form action="{{ route('admin.veiculos.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-sm-12 col-xs-12 col-md-12">
@@ -121,12 +121,23 @@
                         <textarea name="detalhes" id="detalhes" class="form-control"></textarea>
                     </div>
                 </div>
-                <div class="col-sm-12 col-xs-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Imagens:</strong>
-                        <input type="file" id="imagens" class="form-control" multiple="">
-                        <div class="imagens" id="visualizar-imanges">
-
+            </div>
+            <div class="card">
+                <div class="card-header h5">Carregue as imagens do carro</div>
+                <div class="card-image">
+                    <div class="row">
+                        <div class="col">
+                            <div id="images_preview"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body p-2">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Imagens:</strong>
+                                <input type="file" name="images[]" id="images" class="form-control-file" multiple>
+                            </div>
                         </div>
                     </div>
                 </div>

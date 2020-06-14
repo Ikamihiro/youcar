@@ -49,7 +49,7 @@ return [
         ],
 
         'uploads' => [
-            'drive' => 'local',
+            'driver' => 'local',
             'root' => 'uploads',
             'url' => 'uploads'
         ],

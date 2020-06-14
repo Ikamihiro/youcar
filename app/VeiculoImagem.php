@@ -8,7 +8,7 @@ class VeiculoImagem extends Model
 {
     protected $table = 'veiculo_imagens';
     protected $fillable = [
-        'path', 'legenda'
+        'path', 'legenda', 'veiculo_id'
     ];
 
     public function veiculo() 

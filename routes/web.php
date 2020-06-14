@@ -1,8 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,14 +11,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+// Rota raiz da aplicação que exibi a Página Inicial
 Route::get('/', function () {
     return view('website.index');
 })->name('root');
 
+/*
+|--------------------------------------------------------------------------
+| Auth Routes
+|--------------------------------------------------------------------------
+|
+| Rotas para o controle e administração da Autenticação da aplicação.
+| O registro de novos usuários está desativado
+|
+*/
 Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Rota raiz para a Plataforma de administração da aplicação
+Route::get('/admin', 'HomeController@index')->name('home');
 
+// Grupo de rotas para os CRUDs essenciais da aplicação
 Route::group(['prefix' => 'admin', "middleware" => ["auth"], 'as' => 'admin.'], function () {
+    // Rotas do CRUD de Veículos
     Route::resource('veiculos','VeiculoController');
 });

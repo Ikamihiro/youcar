@@ -131,6 +131,30 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header h5">Selecione imagens para excluir</div>
+                .card
+            </div>
+            <div class="card">
+                <div class="card-header h5">Carregue as novas imagens do carro</div>
+                <div class="card-image">
+                    <div class="row">
+                        <div class="col">
+                            <div id="images_preview"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body p-2">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Imagens:</strong>
+                                <input type="file" name="images[]" id="images" class="form-control-file" multiple>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
             <div class="row justify-content-center">
                 <div class="col-md-auto">
                     <button type="submit" class="btn btn-success">
@@ -141,3 +165,23 @@
         </form>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        function preview_image() {
+            var total_file = document.getElementById("images").files.length;
+            var images = '<div class="row justify-content-start">';
+
+            for(var i = 0; i < total_file; i++) {
+                images += '<div class="col-xs-6 col-sm-12">';
+                images += '<img class="card-img-top img-fluid img-thumbnail" src="' + URL.createObjectURL(event.target.files[i]) + '">';
+                images += '</div>';
+            }
+
+            images += '</div>';
+            $('#images_preview').append(images);
+        }
+
+        window.onload = preview_image;
+    </script>
+@endpush

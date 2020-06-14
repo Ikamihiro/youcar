@@ -44,20 +44,37 @@ class VeiculoController extends Controller
             'condicao' => 'required',
             'combustivel' => 'required',
             'ano' => 'required',
-            'cor' => 'required'
+            'cor' => 'required',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
+        $images = $request->images;
         $veiculo = new Veiculo($request->all());
 
-        $veiculo->save();
-        return redirect()->route('admin.veiculos.index')
-            ->with('success', 'Veículo salvo com sucesso!');
+        if($veiculo->save()) {
+            foreach($images as $image) {
+                $imagePath = Storage::disk('public')->put($veiculo->nome . $veiculo->id . '/', $image);
+                VeiculoImagem::create([
+                    'path' => '/uploads/veiculos/' . $imagePath,
+                    'legenda' => $veiculo->nome,
+                    'veiculo_id' => $veiculo->id
+                ]);
+            }
+            
+            // Sucesso! Redireciona p/ Index Veículos
+            return redirect()->route('admin.veiculos.index')
+                ->with('success', 'Veículo salvo com sucesso!');
+        }
+
+        // Fracasso! Redireciona de volta
+        return redirect()->back()
+            ->with('error', 'Algo de errado aconteceu!');
     }
 
     // Retorna os dados de um Veículo para edição
     public function edit($id)
     {
-        $veiculo = Veiculo::find($id);
+        $veiculo = Veiculo::with('imagens')->findOrFail($id);
         $marcas = Marca::all(['id', 'nome']);
         $combustiveis = ['Flex', 'Álcool', 'Diesel', 'Gasolina'];
         $condicoes = ['Novo', 'Usado'];
@@ -78,7 +95,8 @@ class VeiculoController extends Controller
             'condicao' => 'required',
             'combustivel' => 'required',
             'ano' => 'required',
-            'cor' => 'required'
+            'cor' => 'required',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $veiculo = Veiculo::find($id);
