@@ -124,7 +124,7 @@
                 <div class="col-sm-12 col-xs-12 col-md-12">
                     <div class="form-group">
                         <strong>Selecione uma imagem para capa:</strong>
-                        <input type="file" name="imagem_capa" id="imagen" class="form-control-file">
+                        <input type="file" name="imagemCapa" id="imagem" class="form-control-file">
                     </div>
                 </div>
             </div>

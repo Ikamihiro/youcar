@@ -45,10 +45,22 @@ class VeiculoController extends Controller
             'combustivel' => 'required',
             'ano' => 'required',
             'cor' => 'required',
-            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'imagemCapa' => 'max:20971520|mimes:jpg,jpeg,png',
+            'images.*' => 'max:20971520|mimes:jpg,jpeg,png'
         ]);
 
         $images = $request->images;
+
+        // Salvando a imagem de capa
+        $capa = $request->file('imagemCapa');
+        if ($capa) {
+            $pathCapa = $capa->store('imagens/veiculos/capa' . time(), ['disk' => 'public']);
+            // Adiciona campo 
+            $request->merge([
+                'imagem_capa' => $pathCapa
+            ]);
+        }
+        
         $veiculo = new Veiculo($request->all());
 
         if($veiculo->save()) {

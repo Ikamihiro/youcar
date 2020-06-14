@@ -17,6 +17,7 @@ class Veiculo extends Model
         'combustivel',
         'ano',
         'cor',
+        'imagem_capa',
         'detalhes'
     ];
 

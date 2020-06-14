@@ -74,11 +74,7 @@
                                     <div class="row">
                                         {{-- Imagem --}}
                                         <div class="col-md-auto">
-                                            @foreach ($veiculo->imagens as $imagem)
-                                                @if ($loop->first)
-                                                    <img class="card-img-top img-fluid" src="{{ asset($imagem->path) }}" alt="">
-                                                @endif
-                                            @endforeach
+                                            <img class="card-img-top img-fluid" src="{{ asset('storage/'. $veiculo->imagem_capa) }}" alt="">
                                         </div>
                                     </div>
                                     <div class="row">
