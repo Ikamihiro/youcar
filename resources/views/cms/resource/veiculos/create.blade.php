@@ -123,13 +123,13 @@
                 </div>
                 <div class="col-sm-12 col-xs-12 col-md-12">
                     <div class="form-group">
-                        <strong>Selecione uma imagem para capa:</strong>
+                        <strong>Selecione a imagem principal do véiculo:</strong>
                         <input type="file" name="imagemCapa" id="imagem" class="form-control-file">
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header h5">Carregue as imagens do carro</div>
+            <div class="card mb-3">
+                <div class="card-header">Carregue outras imagens para a galeria do veículo</div>
                 <div class="card-image">
                     <div class="row">
                         <div class="col">

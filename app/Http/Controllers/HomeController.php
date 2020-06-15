@@ -17,10 +17,10 @@ class HomeController extends Controller
     {
         $veiculos = Veiculo::with('imagens')
             ->orderBy('created_at', 'desc')
-            ->paginate(3);
+            ->paginate(6);
         $modelos = Veiculo::all(['modelo', 'ano']);
         $marcas = Marca::all(['id', 'nome']);
         return view('website.index', compact('veiculos', 'modelos', 'marcas'))
-            ->with('i', (request()->input('page', 1) - 1) * 3);
+            ->with('i', (request()->input('page', 1) - 1) * 6);
     }
 }

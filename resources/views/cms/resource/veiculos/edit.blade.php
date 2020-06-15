@@ -22,7 +22,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{ route('admin.veiculos.update', $veiculo->id) }}" method="POST">
+        <form action="{{ route('admin.veiculos.update', $veiculo->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row">
@@ -130,19 +130,33 @@
                         <textarea name="detalhes" id="detalhes" class="form-control">{{ $veiculo->detalhes }}</textarea>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-header h5">Selecione imagens para excluir</div>
-                
-            </div>
-            <div class="card">
-                <div class="card-header h5">Carregue as novas imagens do carro</div>
-                <div class="card-image">
-                    <div class="row">
-                        <div class="col">
-                            <div id="images_preview"></div>
+                <div class="col-sm-12 col-xs-12 col-md-12">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <strong>Selecione a imagem principal do véiculo:</strong>
+                            <input type="file" name="imagemCapa" id="imagem" class="form-control-file">
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">Selecione somente as imagens da galeria que deseja excluir</div>
+                <div class="card-body">
+                    <div id="gallery-delete">
+                        @foreach ($veiculo->imagens as $imagem)
+                            <a>
+                                <input name="deleteImages[]" style="position: absolute; z-index: 2" 
+                                value="{{ $imagem->id }}" type="checkbox">
+                                <img src="{{ asset($imagem->path) }}" id="img{{ md5($imagem->id) }}">
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-header">Carregue outras imagens para a galeria do veículo</div>
+                <div class="card-body">
+                    <div id="images_preview"></div>
                 </div>
                 <div class="card-body p-2">
                     <div class="row">
@@ -165,23 +179,3 @@
         </form>
     </div>
 @endsection
-
-@push('scripts')
-    <script>
-        function preview_image() {
-            var total_file = document.getElementById("images").files.length;
-            var images = '<div class="row justify-content-start">';
-
-            for(var i = 0; i < total_file; i++) {
-                images += '<div class="col-xs-6 col-sm-12">';
-                images += '<img class="card-img-top img-fluid img-thumbnail" src="' + URL.createObjectURL(event.target.files[i]) + '">';
-                images += '</div>';
-            }
-
-            images += '</div>';
-            $('#images_preview').append(images);
-        }
-
-        window.onload = preview_image;
-    </script>
-@endpush
