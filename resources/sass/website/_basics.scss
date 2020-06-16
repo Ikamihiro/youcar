@@ -1,0 +1,42 @@
+// Basics Custom Styles
+
+// Custom Button Danger Styles
+.btn-danger {
+    background-color: $red;
+
+    &:hover, &:active {
+        background-color: brown;
+    }
+}
+
+// Navbar Styles Override
+.navbar {
+    .navbar-nav {
+        .nav-item {
+            margin-right: 2rem;
+            text-align: center;
+
+            .nav-link{
+                align-self: center;
+                font-size: large;
+                font-weight: 900;
+                color: $light;
+
+                &:active {
+                    background-color: $danger;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+// Footer Styles
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: $light;
+    color: $primary;
+}
+

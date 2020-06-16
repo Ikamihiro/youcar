@@ -1,0 +1,48 @@
+// Cards
+.card-carros {
+    margin: 3% 0 3% 0;
+
+
+    .card {
+        background: white;
+        display: flex;
+        flex-direction: column;
+
+        .card-header,
+        .card-body,
+        .card-footer {
+            padding: 3%;
+            padding-bottom: 0;
+        
+            &:last-child {
+                padding-bottom: 3%;
+            }
+        }
+      
+        .card-body {
+            flex: 1 1 auto;
+        }
+
+        .card-footer {
+            background-color: $red;
+            color: $light;
+
+            @media (max-width: 767.98px) {
+                .row {
+                    flex-direction: column;
+
+                    .col-md-auto {
+                        width: auto;
+                    }
+                }
+            }
+
+            .btn-link {
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
+    }
+}
+  

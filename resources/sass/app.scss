@@ -1,1 +1,23 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Nunito&display=swap');
+
+// FontAwesome
+@import 'fontawesome/fontawesome';
+
+// Justified Gallery
+@import '~justifiedGallery/dist/css/justifiedGallery.css';
+
+// Variables
+@import 'app/variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Custom Basics Styles
+@import 'app/basics';
+
+// Custom Navbar Styles
+@import 'app/navbar';
+
+// Custom Login Page Styles
+@import 'app/login';

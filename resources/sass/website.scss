@@ -1,0 +1,66 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+// Variables
+@import 'website/variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// FontAwesome
+@import 'fontawesome/fontawesome';
+
+// Import Custom Basics Styles
+@import 'website/basics';
+
+// Import Custom Hero
+@import 'website/hero';
+
+// Import Custom Cars Styles
+@import 'website/cards';
+
+// General Custom Styles
+body {
+    background-color: $light;
+}
+
+// Pagina Inicial styles
+.filtro-carros {
+    padding: 0;
+    
+    @media (max-width: 767.98px) {
+        .row {
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+
+            .enviar-filtro {
+                width: auto;
+            }
+        }
+    }
+}
+
+.card-carros {
+    @media (max-width: 767.98px) {
+        padding: 0 2rem 2rem 2rem;
+        margin-top: 0;
+
+        .row {
+            flex-direction: column;
+            justify-content: center;
+
+            .card {
+                margin-top: 2rem;
+            }
+        }
+
+        .ver-mais {
+            flex-direction: column;
+
+            .col-md-auto {
+                width: auto;
+            }
+        }
+    }
+}

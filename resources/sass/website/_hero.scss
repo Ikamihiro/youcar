@@ -1,0 +1,51 @@
+// Hero Custom Styles
+
+.hero {
+    background-color: $light;
+    padding: 3rem;
+
+    @media (max-width: 767.98px) {
+        padding: 1rem;
+
+        .hero-brand {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-social {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .row {
+                flex-direction: row;
+
+                .col-md-auto {
+                    width: auto;
+
+                    .btn {
+                        font-size: 2rem;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &-brand {
+        font-weight: bold;
+        color: $light;
+
+        img {
+            width: 15rem;
+            height: 7rem;
+        }
+    }
+
+    .btn {
+        font-size: 2.5rem;
+        padding: 0;
+    }
+}
