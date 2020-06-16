@@ -33,6 +33,6 @@ class Veiculo extends Model
 
     public function equipamentos()
     {
-        return $this->belongsToMany(Equipamento::class, 'veiculo_equipamento');
+        return $this->belongsToMany(Equipamento::class);
     }
 }

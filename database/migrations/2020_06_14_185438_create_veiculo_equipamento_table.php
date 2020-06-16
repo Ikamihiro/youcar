@@ -13,13 +13,11 @@ class CreateVeiculoEquipamentoTable extends Migration
      */
     public function up()
     {
-        Schema::create('veiculo_equipamento', function (Blueprint $table) {
-            $table->id();
+        Schema::create('equipamento_veiculo', function (Blueprint $table) {
             $table->unsignedBigInteger('veiculo_id');
             $table->unsignedBigInteger('equipamento_id');
             $table->foreign('veiculo_id')->references('id')->on('veiculos')->onDelete('cascade');
             $table->foreign('equipamento_id')->references('id')->on('equipamentos')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
@@ -30,6 +28,6 @@ class CreateVeiculoEquipamentoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('veiculo_equipamento');
+        Schema::dropIfExists('equipamento_veiculo');
     }
 }

@@ -62,7 +62,7 @@
             <div class="container-lg">
                 <div class="row">
                     @foreach ($veiculos as $veiculo)
-                        <div class="col">
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
                             <div class="card shadow">
                                 <div class="card-body">
                                     <div class="row justify-content-center align-items-center">
@@ -74,7 +74,7 @@
                                     <div class="row">
                                         {{-- Imagem --}}
                                         <div class="col-md-auto">
-                                            <img class="card-img-top img-fluid" src="{{ asset('storage/'. $veiculo->imagem_capa) }}" alt="">
+                                            <img class="card-img-top img-fluid" src="{{ url('resize/' . base64_encode(dirname($veiculo->imagem_capa)) . '&350&200&' . basename($veiculo->imagem_capa)) }}" alt="">
                                         </div>
                                     </div>
                                     <div class="row">

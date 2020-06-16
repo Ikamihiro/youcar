@@ -11,6 +11,6 @@ class Equipamento extends Model
 
     public function veiculos()
     {
-        return $this->belongsToMany(Veiculo::class, 'veiculo_equipamento');
+        return $this->belongsToMany(Veiculo::class);
     }
 }

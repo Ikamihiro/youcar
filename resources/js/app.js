@@ -36,3 +36,20 @@ $('#gallery-delete').justifiedGallery({
     cssAnimation: true,
     margins : 5
 });
+
+// Função que filtra os Equipamentos para salvar
+$("#adicionarEquipamento").click(function () {
+    $.each($("#equipamentosFonte option:selected"), function() {
+        var element = '<option value="' + $(this).val() +'" selected>';
+        element += $(this).text();
+        element += '</option>';
+        $("#equipamentosSelecionados").append(element);
+    });
+});
+
+// Função que remove os Equipamentos filtrados
+$("#removerEquipamento").click(function () {
+    $.each($("#equipamentosSelecionados option:selected"), function() {
+        $(this).remove();
+    });
+});

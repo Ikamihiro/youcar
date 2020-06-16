@@ -8,6 +8,7 @@ use App\Http\Requests\VeiculoUpdateRequest;
 use App\Veiculo;
 use App\VeiculoImagem;
 use App\Marca;
+use App\Equipamento;
 use Auth;
 use Storage;
 
@@ -27,11 +28,12 @@ class VeiculoController extends Controller
     public function create()
     {
         $marcas = Marca::all(['id', 'nome']);
+        $equipamentos = Equipamento::all(['id', 'nome']);
         $combustiveis = ['Flex', 'Álcool', 'Diesel', 'Gasolina'];
         $condicoes = ['Novo', 'Usado'];
         $transmissoes = ['Automática', 'Manual'];
         return view('cms.resource.veiculos.create', 
-            compact('marcas', 'combustiveis', 'condicoes', 'transmissoes'));
+            compact('marcas', 'combustiveis', 'condicoes', 'transmissoes', 'equipamentos'));
     }
 
     // Salva no BD um Veículo, juntamente com suas imagens
@@ -44,6 +46,7 @@ class VeiculoController extends Controller
         $capa = $request->file('imagemCapa');
         if ($capa) {
             $pathCapa = $capa->store('imagens/veiculos/capa' . time(), ['disk' => 'public']);
+            //$pathCapa = str_replace('//', '/', $pathCapa);
             // Adiciona ao campo 
             $request->merge([
                 'imagem_capa' => $pathCapa
@@ -53,8 +56,12 @@ class VeiculoController extends Controller
         $veiculo = new Veiculo($request->all());
 
         if($veiculo->save()) {
+            $equipamentos = Equipamento::find($request->equipamentos);
+            $veiculo->equipamentos()->attach($equipamentos);
+
             foreach($images as $image) {
                 $imagePath = Storage::disk('public')->put($veiculo->id .'/' . time() . '/', $image);
+                //$imagePath = str_replace('//', '/', $imagePath);
                 VeiculoImagem::create([
                     'path' => '/storage/' . $imagePath,
                     'legenda' => $veiculo->modelo,
