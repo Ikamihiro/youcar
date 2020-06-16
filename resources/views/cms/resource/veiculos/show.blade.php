@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <h4 class="card-header">Veículo {{ $veiculo->nome }}</h4>
+                    <h4 class="card-header">Veículo {{ $veiculo->modelo }}</h4>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">

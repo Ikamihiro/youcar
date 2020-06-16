@@ -19,8 +19,8 @@
     <div class="container">
         <table class="table table-bordered table-striped">
             <thead>
-                <tr class="bg-secondary text-light">
-                    <th>Nome</th>
+                <tr>
+                    <th>Modelo</th>
                     <th>Marca</th>
                     <th>Valor</th>
                     <th>Quilometragem</th>
@@ -31,7 +31,7 @@
             <tbody>
                 @foreach ($veiculos as $veiculo)
                     <tr>
-                        <th>{{ $veiculo->nome }}</th>
+                        <th>{{ $veiculo->modelo }}</th>
                         <th>{{ $veiculo->marca->nome }}</th>
                         <th>R$ {{ $veiculo->valor }}</th>
                         <th>{{ $veiculo->quilometragem }}km</th>
