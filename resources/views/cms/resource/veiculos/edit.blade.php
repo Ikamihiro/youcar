@@ -58,6 +58,56 @@
                 <div class="col-sm-12 col-xs-12 col-md-12">
                     <div class="row">
                         <div class="col">
+                            <strong>Selecione os equipamentos desejados:</strong>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <select class="custom-select" id="equipamentosFonte" multiple size="10">
+                                    <option disabled selected></option>
+                                    @foreach ($equipamentos as $equipamento)
+                                        <option value="{{ $equipamento->id }}">
+                                            {{ $equipamento->nome }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-auto">
+                            <div class="form-group">
+                                <div class="row mb-2">
+                                    <div class="col">
+                                        <button type="button" id="adicionarEquipamento" class="btn btn-primary">
+                                            Adicionar
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="button" id="removerEquipamento" class="btn btn-primary">
+                                            Remover
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <select multiple="multiple" class="custom-select" name="equipamentos[]" id="equipamentosSelecionados" size="10">
+                                    @foreach ($veiculo->equipamentos as $equipamento)
+                                        <option value="{{ $equipamento->id }}" selected>
+                                            {{ $equipamento->nome }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xs-12 col-md-12">
+                    <div class="row">
+                        <div class="col">
                             <div class="form-group">
                                 <strong>Quilometragem:</strong>
                                 <input type="number" name="quilometragem" value="{{ $veiculo->quilometragem }}" class="form-control" placeholder="Digite a quilometragem ...">

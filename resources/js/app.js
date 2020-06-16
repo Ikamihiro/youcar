@@ -51,5 +51,12 @@ $("#adicionarEquipamento").click(function () {
 $("#removerEquipamento").click(function () {
     $.each($("#equipamentosSelecionados option:selected"), function() {
         $(this).remove();
+        setSelectedAllOptions('#equipamentosSelecionados');
     });
 });
+
+// Função que deixa todos as tags <option>
+// de um <select> selecionadas
+function setSelectedAllOptions(element) {
+    $(element).children().prop('selected', true);
+}

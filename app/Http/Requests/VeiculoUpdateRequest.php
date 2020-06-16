@@ -27,6 +27,7 @@ class VeiculoUpdateRequest extends FormRequest
             'modelo' => 'required',
             'marca_id' => 'required',
             'valor' => 'required|max:10|regex:/^-?[0-9]+(?:\.[0-9]{1,2})?$/',
+            'equipamentos' => 'exists:equipamentos,id',
             'quilometragem' => 'required',
             'transmissao' => 'required',
             'condicao' => 'required',

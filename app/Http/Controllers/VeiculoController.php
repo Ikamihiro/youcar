@@ -19,9 +19,9 @@ class VeiculoController extends Controller
     {
         $veiculos = Veiculo::with('imagens')
             ->orderBy('created_at', 'desc')
-            ->paginate(5);
+            ->paginate(15);
         return view('cms.resource.veiculos.index', compact('veiculos'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 15);
     }
 
     // Retorna a Tela de Adicionar Veículo
@@ -84,11 +84,12 @@ class VeiculoController extends Controller
     {
         $veiculo = Veiculo::with('imagens')->findOrFail($id);
         $marcas = Marca::all(['id', 'nome']);
+        $equipamentos = Equipamento::all(['id', 'nome']);
         $combustiveis = ['Flex', 'Álcool', 'Diesel', 'Gasolina'];
         $condicoes = ['Novo', 'Usado'];
         $transmissoes = ['Automática', 'Manual'];
         return view('cms.resource.veiculos.edit', 
-            compact('veiculo', 'marcas', 'combustiveis', 'condicoes', 'transmissoes'));
+            compact('veiculo', 'marcas', 'combustiveis', 'condicoes', 'transmissoes', 'equipamentos'));
     }
 
     // Atualiza os dados de um Veículo no BD
@@ -113,12 +114,18 @@ class VeiculoController extends Controller
         }
 
         if($veiculo->update($request->all())) {
+            // Primeiro, remove todos os equipamentos
+            $veiculo->equipamentos()->detach();
+            // E então adiciona os novos
+            $equipamentos = Equipamento::find($request->equipamentos);
+            $veiculo->equipamentos()->attach($equipamentos);
+
             // Excluir as imagens selecionadas
             $imagensDeleteIds = $request->input('deleteImages');
             if($imagensDeleteIds) {
                 $imagensDelete = VeiculoImagem::find($imagensDeleteIds);
                 
-                // Perga todos os paths
+                // Pega todos os paths
                 $paths = [];
                 foreach ($imagensDelete as $imagem) {
                     array_push($paths, $imagem->path);

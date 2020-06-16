@@ -61,7 +61,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <select class="custom-select" name="equipamentos[]" id="equipamentosFonte" multiple size="10">
+                                <select class="custom-select" id="equipamentosFonte" multiple size="10">
                                     <option disabled selected></option>
                                     @foreach ($equipamentos as $equipamento)
                                         <option value="{{ $equipamento->id }}">
@@ -91,7 +91,7 @@
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <select multiple="multiple" class="custom-select" id="equipamentosSelecionados" size="10">
+                                <select multiple="multiple" name="equipamentos[]" class="custom-select" id="equipamentosSelecionados" size="10">
                                 </select>
                             </div>
                         </div>

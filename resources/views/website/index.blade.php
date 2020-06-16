@@ -62,7 +62,7 @@
             <div class="container-lg">
                 <div class="row">
                     @foreach ($veiculos as $veiculo)
-                        <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
                             <div class="card shadow">
                                 <div class="card-body">
                                     <div class="row justify-content-center align-items-center">
@@ -106,7 +106,7 @@
                         </div>   
                     @endforeach               
                 </div>
-                <div class="row ver-mais justify-content-center align-items-center mt-3">
+                <div class="row ver-mais justify-content-center align-items-center">
                     <div class="col-md-auto">
                         {!! $veiculos->links() !!}
                     </div>
