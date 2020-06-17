@@ -68,7 +68,12 @@
                                     <div class="row justify-content-center align-items-center">
                                         {{-- Titulo --}}
                                         <div class="col-md-auto">
-                                            <h5 class="card-title"><strong>{{ $veiculo->modelo }}</strong></h5>
+                                            <h5 class="card-title">
+                                                <strong>{{ $veiculo->modelo }} - 
+                                                    {{ $veiculo->marca->nome }} - 
+                                                    {{ $veiculo->ano }}
+                                                </strong>
+                                            </h5>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -96,7 +101,7 @@
                                     {{-- Ir para detalhes --}}
                                     <div class="row justify-content-center align-items-center">
                                         <div class="col-md-auto">
-                                            <a href="{{ route('root') }}" class="btn btn-link">
+                                            <a href="{{ route('show_veiculo', $veiculo->id) }}" class="btn btn-link">
                                                 Estou interessado
                                             </a>
                                         </div>

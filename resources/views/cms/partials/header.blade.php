@@ -54,15 +54,13 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a href="{{ route('root') }}" class="dropdown-item">
-                                    <i class="fas fa-home"></i> Acessar Website
+                                    <i class="fas fa-globe"></i> Acessar Website
                                 </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                    <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
-                                </a>                                
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                     @csrf
+                                    <button type="submit" class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt"></i> Sair da conta
+                                    </button>
                                 </form>
                             </div>
                         </li>

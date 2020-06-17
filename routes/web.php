@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 // Rota raiz da aplicação que exibi a Página Inicial
 Route::get('/', 'HomeController@index')->name('root');
 
+Route::get('veiculo/{id}', 'VeiculoController@show')->name('show_veiculo');
+
 /*
 |--------------------------------------------------------------------------
 | Auth Routes
@@ -29,7 +31,7 @@ Route::get('/', 'HomeController@index')->name('root');
 Auth::routes(['register' => false]);
 
 // Rota raiz para a Plataforma de administração da aplicação
-Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin', 'Cms\AdminController@index')->name('admin');
 
 // Redimensionamento dinâmico de imagem
 // exemplo.com/resize/<base64dir>&<largura>&<altura>&<imagem.ext>
@@ -38,5 +40,5 @@ Route::get('resize/{parameters}', 'Resize\ResizeImageController@show');
 // Grupo de rotas para os CRUDs essenciais da aplicação
 Route::group(['prefix' => 'admin', "middleware" => ["auth"], 'as' => 'admin.'], function () {
     // Rotas do CRUD de Veículos
-    Route::resource('veiculos','VeiculoController');
+    Route::resource('veiculos','Cms\VeiculoController');
 });
