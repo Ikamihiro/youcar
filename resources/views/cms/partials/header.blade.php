@@ -34,7 +34,10 @@
                                 <i class="fas fa-search"></i> 
                                 Consultar
                             </a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> Inserir</a>
+                            <a class="dropdown-item" href="{{ route('admin.carousel.create') }}">
+                                <i class="fas fa-plus"></i> 
+                                Inserir
+                            </a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
