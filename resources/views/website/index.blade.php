@@ -2,7 +2,7 @@
 
 @section('content')
     <main>
-        @include('website.partials.carousel')
+        @include('website.partials.carousel', ['imagens' => $imagens])
         <section class="filtro-carros bg-secondary py-5">
             <div class="container-lg">
                 <form action="{{ route('root') }}">

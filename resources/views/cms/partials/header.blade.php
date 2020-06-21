@@ -30,7 +30,10 @@
                             <i class="fas fa-images"></i> Carousel
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-search"></i> Consultar</a>
+                            <a class="dropdown-item" href="{{ route('admin.carousel.index') }}">
+                                <i class="fas fa-search"></i> 
+                                Consultar
+                            </a>
                             <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> Inserir</a>
                         </div>
                     </li>

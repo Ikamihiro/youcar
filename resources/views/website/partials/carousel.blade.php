@@ -3,31 +3,17 @@
         <div id="carouselExampleControls" class="carousel slide shadow" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="{{ asset('resources/images/carshow_1.jpg') }}" alt="First slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Lorem Ipsum</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                @foreach ($imagens as $key => $imagem)
+                    <div class="carousel-item {{ $key == 0 ? ' active' : '' }}">
+                        <img class="d-block w-100" src="{{ asset('storage/'. $imagem->path) }}" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>{{ $imagem->titulo }}</h5>
+                            <p>{{ $imagem->subtitulo }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{ asset('resources/images/carshow_2.jpg') }}" alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Lorem Ipsum</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>    
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="{{ asset('resources/images/carshow_3.jpg') }}" alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Lorem Ipsum</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
