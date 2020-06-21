@@ -1,6 +1,5 @@
 require('./bootstrap');
 require('justifiedGallery');
-require('../libraries/bootstrap-lightbox/bootstrap-lightbox');
 
 // Toda vez que anexar uma imagem na galeria,
 // dispara a função preview_image()
@@ -59,9 +58,3 @@ $("#removerEquipamento").click(function () {
 function setSelectedAllOptions(element) {
     $(element).children().prop('selected', true);
 }
-
-// Inicializa o Bootstrap Lightbox
-$('#light-box').lightbox({
-    'show': true,
-    'keyboard': true
-});

@@ -14,15 +14,9 @@
                             <strong>Imagens do Veículo</strong>
                         </div>
                         <div class="row">
-                            {{-- IMPLEMENTANDO O BOOTSTRAP LIGHTBOX
-                                <div id="light-box" class="lightbox fade"  tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="lightbox-content">
-                                    <img class="img-fluid" src="{{ asset($veiculo->imagem_path) }}">
-                                </div>
-                            </div> --}}
                             <div class="col-sm-12 col-xs-12 col-md-12 mb-3">
                                 <img class="card-img-top img-fluid" 
-                                src="{{ url('resize/' . base64_encode(dirname($veiculo->imagem_capa)) . '&350&200&' . basename($veiculo->imagem_capa)) }}">
+                                src="{{url('resize/'.base64_encode(dirname($veiculo->imagem_capa)).'&350&200&'.basename($veiculo->imagem_capa))}}">
                             </div>
                             @foreach ($veiculo->imagens as $imagem)
                                 <div class="col-sm-12 col-xs-12 col-md-12 mb-3">
@@ -78,19 +72,15 @@
                         <div class="row col-sm-12 col-xs-12 col-md-12 mb-3 h5">
                             <strong>Equipamentos</strong>
                         </div>
-                        <div class="row">
+                        <div class="row justify-content-between">
                             @foreach ($veiculo->equipamentos as $equipamento)
-                                <div class="col-12 col-md-4 col-lg-4 col-xl-4 mb-3">
-                                    <div class="card shadow">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-auto">
-                                                    <i class="fas fa-cogs"></i>
-                                                </div>
-                                                <div class="col">
-                                                    {{ $equipamento->nome }}
-                                                </div>
-                                            </div>
+                                <div class="col-12 col-md-5 col-lg-5 col-xl-5 mb-3">
+                                    <div class="row">
+                                        <div class="col-md-auto text-danger">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <div class="col h6">
+                                            <strong>{{ $equipamento->nome }}</strong>
                                         </div>
                                     </div>
                                 </div>
