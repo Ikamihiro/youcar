@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 // Rota raiz da aplicação que exibi a Página Inicial
 Route::get('/', 'HomeController@index')->name('root');
 
+// Rota para mostrar informações de um veículo
 Route::get('veiculo/{id}', 'VeiculoController@show')->name('show_veiculo');
 
 /*
@@ -46,3 +47,6 @@ Route::group(['prefix' => 'admin', "middleware" => ["auth"], 'as' => 'admin.'], 
     // Rotas do CRUD das Páginas
     Route::resource('paginas','Cms\PaginaController');
 });
+
+// Rota para mostrar as informações de uma página
+Route::get('/{slug}', 'HomeController@show')->name('show_page');

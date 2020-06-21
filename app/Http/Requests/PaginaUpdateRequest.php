@@ -25,7 +25,7 @@ class PaginaUpdateRequest extends FormRequest
     {
         return [
             'titulo' => 'required|string|unique:paginas,id,' . $this->pagina . '|max:255',
-            'subtitulo' => 'string|max:255',
+            'subtitulo' => 'max:255',
             'conteudo' => 'required|string'
         ];
     }
