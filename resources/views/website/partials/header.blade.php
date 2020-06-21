@@ -34,7 +34,7 @@
             </div>
         </div>
     </section>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary shadow">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" 
                 data-target="#navbarContent" aria-controls="navbarContent" 

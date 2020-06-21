@@ -12,17 +12,15 @@ $("#images").change(function () {
 function preview_image() {
     var total_file = document.getElementById("images").files.length;
     var images = '';
-
     for(var i = 0; i < total_file; i++) {
         images += '<a>';
         images += '<img src="' + URL.createObjectURL(event.target.files[i]) + '">';
         images += '</a>';
     }
-
     $('#images_preview').html(images);
     $('#images_preview').justifiedGallery({
         lastRow : 'justify',
-        rowHeight: 50,
+        rowHeight: 30,
         cssAnimation: true,
         margins : 5
     });
