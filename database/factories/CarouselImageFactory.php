@@ -7,8 +7,10 @@ use Illuminate\Http\UploadedFile;
 use Faker\Generator as Faker;
 
 $factory->define(CarouselImage::class, function (Faker $faker) {
+    $width = 1200;
+    $height = 600;
     // Uma imagem do Carousel
-    $uploadedFile = UploadedFile::fake()->image('avatar.jpg', rand(400, 800), rand(400, 800))->size(rand(400, 800));
+    $uploadedFile = UploadedFile::fake()->image('avatar.jpg', $width, $height)->size(600);
 
     // Salva a imagem no disco
     $pathImagem = $uploadedFile->store('imagens/carousel', ['disk' => 'public']);
