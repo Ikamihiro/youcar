@@ -7,6 +7,12 @@
 // Justified Gallery
 @import '~justifiedGallery/dist/css/justifiedGallery.css';
 
+// Quill Editor
+@import "~quill/dist/quill.snow.css";
+.ql-container {
+  height: 50%;
+}
+
 // Variables
 @import 'app/variables';
 

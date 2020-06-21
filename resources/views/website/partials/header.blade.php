@@ -48,7 +48,14 @@
                             <i class="fas fa-home"></i> Início
                         </a>
                     </li>
-                    <li class="nav-item">
+                    @foreach ($paginas as $pagina)
+                        <li class="nav-item">
+                            <a href="{{ route('show_page', $pagina->slug) }}" class="nav-link">
+                                {{ $pagina->titulo }}
+                            </a>
+                        </li>
+                    @endforeach
+                    {{-- <li class="nav-item">
                         <a href="{{ route('root') }}" class="nav-link">
                             Sobre
                         </a>
@@ -57,7 +64,7 @@
                         <a href="{{ route('root') }}" class="nav-link">
                             Contato
                         </a>
-                    </li>
+                    </li> --}}
                 </div>
             </div>
         </div>

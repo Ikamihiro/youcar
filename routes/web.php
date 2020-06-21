@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 // Rota raiz da aplicação que exibi a Página Inicial
 Route::get('/', 'HomeController@index')->name('root');
 
+// Rota para mostrar informações de um veículo
 Route::get('veiculo/{id}', 'VeiculoController@show')->name('show_veiculo');
 
 /*
@@ -39,8 +40,13 @@ Route::get('resize/{parameters}', 'Resize\ResizeImageController@show');
 
 // Grupo de rotas para os CRUDs essenciais da aplicação
 Route::group(['prefix' => 'admin', "middleware" => ["auth"], 'as' => 'admin.'], function () {
-    // Rotas do CRUD de Veículos
+    // Rotas do CRUD dos Veículos
     Route::resource('veiculos','Cms\VeiculoController');
     // Rotas do CRUD do Carousel
     Route::resource('carousel','Cms\CarouselController');
+    // Rotas do CRUD das Páginas
+    Route::resource('paginas','Cms\PaginaController');
 });
+
+// Rota para mostrar as informações de uma página
+Route::get('/{slug}', 'HomeController@show')->name('show_page');

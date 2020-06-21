@@ -171,8 +171,14 @@ class VeiculoController extends Controller
     public function destroy($id) 
     {
         $veiculo = Veiculo::with('imagens')->findOrFail($id);
-        $veiculo->delete();
-        return redirect()->route('admin.veiculos.index')
-            ->with('success', 'Veículo excluído com sucesso!');
+        
+        if($veiculo->delete()) {
+            return redirect()->route('admin.veiculos.index')
+                ->with('success', 'Veículo excluído com sucesso!');
+        }
+
+        // Fracasso! Redireciona de volta
+        return redirect()->back()
+            ->with('error', 'Algo de errado aconteceu!');
     }
 }

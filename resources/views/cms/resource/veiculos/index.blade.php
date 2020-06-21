@@ -1,5 +1,4 @@
 @extends('cms.layouts.default')
-
 @section('content')
     <div class="container">
         <div class="row justify-content-between align-items-center mb-3">

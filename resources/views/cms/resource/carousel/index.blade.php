@@ -38,11 +38,8 @@
                         <th>{{ $imagem->titulo }}</th>
                         <th>{{ $imagem->subtitulo }}</th>
                         <th>
-                            <form action="{{ route('admin.veiculos.destroy', $imagem->id) }}" method="POST">
-                                <a href="{{ route('admin.veiculos.show', $imagem->id) }}" class="btn btn-info">
-                                    <i class="fas fa-eye"></i>
-                                </a>
-                                <a href="{{ route('admin.veiculos.edit', $imagem->id) }}" class="btn btn-warning">
+                            <form action="{{ route('admin.carousel.destroy', $imagem->id) }}" method="POST">
+                                <a href="{{ route('admin.carousel.edit', $imagem->id) }}" class="btn btn-warning">
                                     <i class="fas fa-edit"></i>
                                 </a>
 
