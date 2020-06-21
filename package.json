@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "font-awesome": "^4.7.0",
-        "justifiedGallery": "^3.8.1"
+        "justifiedGallery": "^3.8.1",
+        "quill": "^1.3.7"
     }
 }

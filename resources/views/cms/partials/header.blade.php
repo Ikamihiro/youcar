@@ -45,8 +45,14 @@
                             <i class="fas fa-file-alt"></i> Páginas
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-search"></i> Consultar</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> Inserir</a>
+                            <a class="dropdown-item" href="{{ route('admin.paginas.index') }}">
+                                <i class="fas fa-search"></i> 
+                                Consultar
+                            </a>
+                            <a class="dropdown-item" href="{{ route('admin.paginas.create') }}">
+                                <i class="fas fa-plus"></i> 
+                                Inserir
+                            </a>
                         </div>
                     </li>
                 </ul>

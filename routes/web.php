@@ -39,8 +39,10 @@ Route::get('resize/{parameters}', 'Resize\ResizeImageController@show');
 
 // Grupo de rotas para os CRUDs essenciais da aplicação
 Route::group(['prefix' => 'admin', "middleware" => ["auth"], 'as' => 'admin.'], function () {
-    // Rotas do CRUD de Veículos
+    // Rotas do CRUD dos Veículos
     Route::resource('veiculos','Cms\VeiculoController');
     // Rotas do CRUD do Carousel
     Route::resource('carousel','Cms\CarouselController');
+    // Rotas do CRUD das Páginas
+    Route::resource('paginas','Cms\PaginaController');
 });

@@ -58,3 +58,26 @@ $("#removerEquipamento").click(function () {
 function setSelectedAllOptions(element) {
     $(element).children().prop('selected', true);
 }
+
+import Quill from 'quill';
+
+let editor = document.getElementById('quill');
+
+if (editor) {
+    let q = new Quill(editor, {
+        theme: 'snow',   // Specify theme in configuration
+        placeholder: 'Comece a digitar',
+    });
+    var $html = document.getElementById('quill_html');
+    var $character = document.getElementById('character');
+
+    q.on('text-change', function () {
+        if ($html)
+            $html.value = q.root.innerHTML;
+
+        if ($character)
+            $character.innerText = q.getLength() - 1;
+
+        window.console.log($html.value);
+    });
+}
