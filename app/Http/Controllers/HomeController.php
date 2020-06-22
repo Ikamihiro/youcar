@@ -21,14 +21,49 @@ class HomeController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(6);
         
-            $modelos = Veiculo::all(['modelo', 'ano']);
-        
+        $modelos = Veiculo::all(['modelo', 'ano']);
         $marcas = Marca::all(['id', 'nome']);
-        
-        $imagens = CarouselImage::all();
 
         return view('website.index', 
-            compact('veiculos', 'modelos', 'marcas', 'imagens'))
+            compact('veiculos', 'modelos', 'marcas'))
+            ->with('i', (request()->input('page', 1) - 1) * 6);
+    }
+
+    public function search(Request $request)
+    {
+        $veiculos = Veiculo::with('imagens');
+
+        if($request->has('marca')) {
+            $veiculos = $veiculos->where('marca_id', $request->input('marca'));
+        }
+
+        if($request->has('modelo')) {
+            $veiculos = $veiculos->where('modelo', $request->input('modelo'));
+        }
+        
+        if($request->has('preco')) {
+            if($request->input('preco') == '<50') {
+                $veiculos = $veiculos->where('valor', '<', 50000);
+            } else if($request->input('preco') == '50-100') {
+                $veiculos = $veiculos
+                    ->where('valor', '>=', 50000)
+                    ->where('valor', '<=', 100000);
+            } else {
+                $veiculos = $veiculos->where('valor', '>', 100000);
+            }
+        }
+
+        if($request->has('ano')) {
+            $veiculos = $veiculos->where('ano', $request->input('ano'));
+        }
+
+        $veiculos = $veiculos->paginate(6);
+
+        $modelos = Veiculo::all(['modelo']);
+        $marcas = Marca::all(['id', 'nome']);
+        
+        return view('website.resource.veiculos.search', 
+            compact('veiculos', 'modelos', 'marcas'))
             ->with('i', (request()->input('page', 1) - 1) * 6);
     }
 
