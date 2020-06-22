@@ -5,7 +5,7 @@
         @include('website.partials.carousel', ['imagens' => $imagens])
         <section class="filtro-carros bg-secondary py-5">
             <div class="container-lg">
-                <form action="{{ route('root') }}">
+                <form action="{{ route('search') }}" method="get">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-md-2">
                             <div class="form-group">
@@ -31,9 +31,9 @@
                             <div class="form-group">
                                 <select name="preco" class="custom-select" id="precos_select">
                                     <option disabled selected>Preço</option>
-                                    <option value="MT">Menor que R$ 50.000,00</option>
-                                    <option value="MT">Entre R$ 50.000,00 e R$ 100.000,00</option>
-                                    <option value="MT">Maior que R$ 100.000,00</option>
+                                    <option value="<50">Menor que R$ 50.000,00</option>
+                                    <option value="50-100">Entre R$ 50.000,00 e R$ 100.000,00</option>
+                                    <option value=">100">Maior que R$ 100.000,00</option>
                                 </select>
                             </div>
                         </div>
@@ -41,8 +41,8 @@
                             <div class="form-group">
                                 <select name="ano" class="custom-select" id="anos_select">
                                     <option disabled selected>Ano</option>
-                                    @foreach ($modelos as $item)
-                                        <option value="{{ $item->ano }}">{{ $item->ano }}</option>
+                                    @foreach ($anos as $item)
+                                        <option value="{{ $item }}">{{ $item }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -58,7 +58,7 @@
                 </form>
             </div>
         </section>
-        <section class="card-carros">
+        <section class="card-carros mt-5">
             <div class="container-lg">
                 <div class="row">
                     @foreach ($veiculos as $veiculo)

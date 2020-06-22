@@ -16,7 +16,7 @@
                         <div class="row">
                             <div class="col-sm-12 col-xs-12 col-md-12 mb-3">
                                 <img class="card-img-top img-fluid" 
-                                src="{{url('resize/'.base64_encode(dirname($veiculo->imagem_capa)).'&350&200&'.basename($veiculo->imagem_capa))}}">
+                                src="{{ asset('storage/'.$veiculo->imagem_capa) }}">
                             </div>
                             @foreach ($veiculo->imagens as $imagem)
                                 <div class="col-sm-12 col-xs-12 col-md-12 mb-3">

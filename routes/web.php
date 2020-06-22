@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 // Rota raiz da aplicação que exibi a Página Inicial
 Route::get('/', 'HomeController@index')->name('root');
 
+// Rota para pesquisar por filtro
+Route::get('/search', 'HomeController@search')->name('search');
+
 // Rota para mostrar informações de um veículo
 Route::get('veiculo/{id}', 'VeiculoController@show')->name('show_veiculo');
 
