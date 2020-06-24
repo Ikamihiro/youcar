@@ -1,4 +1,5 @@
 @extends('website.layouts.default')
+@section('title', $pagina->titulo)
 @section('content')
     <div class="container mt-3">
         <div class="row justify-content-center">

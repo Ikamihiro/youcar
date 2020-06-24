@@ -25,7 +25,7 @@
                             </a>
                         </div>
                         <div class="col-md-auto">
-                            <a href="#" class="btn btn-link btn-social">
+                            <a href="https://www.facebook.com/You-Car-Multimarcas-120600192970895" class="btn btn-link btn-social">
                                 <i class="fab fa-facebook-square"></i>
                             </a>
                         </div>
@@ -55,16 +55,6 @@
                             </a>
                         </li>
                     @endforeach
-                    {{-- <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">
-                            Sobre
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">
-                            Contato
-                        </a>
-                    </li> --}}
                 </div>
             </div>
         </div>

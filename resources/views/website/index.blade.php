@@ -1,5 +1,5 @@
 @extends('website.layouts.default')
-
+@section('title', 'Página Inicial')
 @section('content')
     <main>
         @include('website.partials.carousel', ['imagens' => $imagens])

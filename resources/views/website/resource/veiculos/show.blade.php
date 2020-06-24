@@ -1,4 +1,5 @@
 @extends('website.layouts.default')
+@section('title', 'Veículo')
 @section('content')
     <div class="container">
         <div class="card shadow mt-3">
