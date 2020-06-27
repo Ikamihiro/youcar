@@ -5,6 +5,13 @@
   */
 
 /*!
+ * Quill Editor v1.3.7
+ * https://quilljs.com/
+ * Copyright (c) 2014, Jason Chen
+ * Copyright (c) 2013, salesforce.com
+ */
+
+/*!
  * Sizzle CSS Selector Engine v2.3.5
  * https://sizzlejs.com/
  *
@@ -13,6 +20,13 @@
  * https://js.foundation/
  *
  * Date: 2020-03-14
+ */
+
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
  */
 
 /*!
@@ -27,6 +41,13 @@
  * https://jquery.org/license
  *
  * Date: 2020-05-04T22:49Z
+ */
+
+/*!
+ * justifiedGallery - v3.8.1
+ * http://miromannino.github.io/Justified-Gallery/
+ * Copyright (c) 2020 Miro Mannino
+ * Licensed under the MIT license.
  */
 
 /**

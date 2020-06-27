@@ -4,14 +4,14 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
-            <div class="card">
-                <div class="card-header h5">Painel Administrativo - YouCar</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+            <div class="jumbotron jumbotron-fluid bg-light">
+                <div class="container row justify-content-center">
+                    <div class="col-md-auto">
+                        <h1 class="display-4">Painel Administrativo</h1>
+                        <p class="lead">
+                            Painel Administrativo dos dados do Website Youcar
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

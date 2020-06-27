@@ -15,17 +15,30 @@
                     </div>
                     <div class="row justify-content-end align-items-center">
                         <div class="col-md-auto">
-                            <a href="#" class="btn btn-link btn-social">
-                                <i class="fab fa-whatsapp-square"></i>
-                            </a>
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-link btn-social"
+                                    id="dropdown-whats" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fab fa-whatsapp-square"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown-whats">
+                                    <a class="dropdown-item" 
+                                        href="https://api.whatsapp.com/send?phone=5565981229088">
+                                        Josy Anne - (65) 98122-9088
+                                    </a>
+                                    <a class="dropdown-item" 
+                                        href="https://api.whatsapp.com/send?phone=5565981146433">
+                                        Ronie - (65) 98114-6433
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-auto">
-                            <a href="#" class="btn btn-link btn-social">
+                            <a href="https://www.instagram.com/youcar_multimarcas" class="btn btn-link btn-social">
                                 <i class="fab fa-instagram-square"></i>
                             </a>
                         </div>
                         <div class="col-md-auto">
-                            <a href="#" class="btn btn-link btn-social">
+                            <a href="https://www.facebook.com/You-Car-Multimarcas-120600192970895" class="btn btn-link btn-social">
                                 <i class="fab fa-facebook-square"></i>
                             </a>
                         </div>
@@ -55,16 +68,6 @@
                             </a>
                         </li>
                     @endforeach
-                    {{-- <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">
-                            Sobre
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('root') }}" class="nav-link">
-                            Contato
-                        </a>
-                    </li> --}}
                 </div>
             </div>
         </div>

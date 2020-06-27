@@ -1,4 +1,5 @@
 @extends('website.layouts.default')
+@section('title', 'Pesquisa')
 @section('content')
     <section class="filtro-carros bg-secondary py-5">
         <div class="container-lg">
