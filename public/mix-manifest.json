@@ -2,5 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/website.css": "/css/website.css",
-    "/js/website.js": "/js/website.js"
+    "/js/app.js.map": "/js/app.js.map",
+    "/js/website.js": "/js/website.js",
+    "/js/website.js.map": "/js/website.js.map"
 }
