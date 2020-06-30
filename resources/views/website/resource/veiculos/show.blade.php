@@ -40,7 +40,7 @@
                             <dd class="col-sm-8">{{ $veiculo->marca->nome }}</dd>
                             <!-- Dado: Quilometragem -->
                             <dt class="col-sm-4 h6"><strong>Quilometragem:</strong></dt>
-                            <dd class="col-sm-8">{{ $veiculo->quilometragem }}</dd>
+                            <dd class="col-sm-8">{{ number_format(strval($veiculo->quilometragem),0,",",".") }} KM</dd>
                             <!-- Dado: Trasmissão -->
                             <dt class="col-sm-4 h6"><strong>Trasmissão:</strong></dt>
                             <dd class="col-sm-8">{{ $veiculo->transmissao }}</dd>
@@ -63,7 +63,7 @@
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <h4 class="mb-0 text-white">
-                                                Valor Atual: <strong>R$ {{ $veiculo->valor }}</strong>
+                                                Valor Atual: <strong>R$ {{ number_format(strval($veiculo->valor),2,",",".") }}</strong>
                                             </h4>
                                         </div>
                                     </div>

@@ -88,12 +88,12 @@
                                             <div class="row justify-content-center align-items-center mt-3">
                                                 {{-- Preço --}}
                                                 <div class="col-md-auto">
-                                                    <p><strong>R$ {{ $veiculo->valor }}</strong></p>
+                                                    <p><strong>R$ {{ number_format(strval($veiculo->valor),2,",",".") }}</strong></p>
                                                 </div>
                                             </div>
                                             <p class="card-text mb-2"><strong>Ano: </strong>{{ $veiculo->ano }}</p>
                                             <p class="card-text mb-2"><strong>Condição: </strong>{{ $veiculo->condicao }}</p>
-                                            <p class="card-text mb-4"><strong>Quilometragem: </strong>{{ $veiculo->quilometragem }} km</p>
+                                            <p class="card-text mb-4"><strong>Quilometragem: </strong>{{ number_format(strval($veiculo->quilometragem),0,",",".") }} KM</p>
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                     <div class="row justify-content-center align-items-center">
                                         <div class="col-md-auto">
                                             <a href="{{ route('show_veiculo', $veiculo->id) }}" class="btn btn-link">
-                                                Estou interessado
+                                                Mais Informações
                                             </a>
                                         </div>
                                     </div>

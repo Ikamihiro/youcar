@@ -32,8 +32,8 @@
                     <tr>
                         <th>{{ $veiculo->modelo }}</th>
                         <th>{{ $veiculo->marca->nome }}</th>
-                        <th>R$ {{ $veiculo->valor }}</th>
-                        <th>{{ $veiculo->quilometragem }}km</th>
+                        <th>R$ {{ number_format(strval($veiculo->valor),2,",",".") }}</th>
+                        <th>{{ number_format(strval($veiculo->quilometragem),0,",",".") }} KM</th>
                         <th>{{ $veiculo->cor }}</th>
                         <th>
                             <form action="{{ route('admin.veiculos.destroy', $veiculo->id) }}" method="POST">
