@@ -148,8 +148,8 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
-                                <strong>Ano:</strong>
-                                <input type="number" name="ano" class="form-control" placeholder="Digite o ano do veículo ...">
+                                <strong>Ano/Modelo:</strong>
+                                <input type="text" name="ano" class="form-control" placeholder="Digite o ano do veículo ...">
                             </div>
                         </div>
                         <div class="col">

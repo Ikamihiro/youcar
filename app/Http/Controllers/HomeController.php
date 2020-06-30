@@ -54,7 +54,7 @@ class HomeController extends Controller
         }
 
         if($request->has('ano')) {
-            $veiculos = $veiculos->where('ano', $request->input('ano'));
+            $veiculos = $veiculos->where('ano', 'like', '%' . $request->input('ano') . '%');
         }
 
         $veiculos = $veiculos->paginate(6);
