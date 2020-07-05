@@ -51,7 +51,7 @@
                             <dt class="col-sm-4 h6"><strong>Combustível:</strong></dt>
                             <dd class="col-sm-8">{{ $veiculo->combustivel }}</dd>
                             <!-- Dado: Ano -->
-                            <dt class="col-sm-4 h6"><strong>Ano do Veículo:</strong></dt>
+                            <dt class="col-sm-4 h6"><strong>Ano/Modelo do Veículo:</strong></dt>
                             <dd class="col-sm-8">{{ $veiculo->ano }}</dd>
                             <!-- Dado: Cor -->
                             <dt class="col-sm-4 h6"><strong>Cor do Veículo:</strong></dt>

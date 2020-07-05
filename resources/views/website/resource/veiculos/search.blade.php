@@ -38,7 +38,7 @@
                     <div class="col-md-2">
                         <div class="form-group">
                             <select name="ano" class="custom-select" id="anos_select">
-                                <option disabled selected>Ano</option>
+                                <option disabled selected>Ano/Modelo</option>
                                 @foreach ($anos as $item)
                                     <option value="{{ $item }}">{{ $item }}</option>
                                 @endforeach
@@ -96,7 +96,7 @@
                                                 <p><strong>R$ {{ number_format(strval($veiculo->valor),2,",",".") }}</strong></p>
                                             </div>
                                         </div>
-                                        <p class="card-text mb-2"><strong>Ano: </strong>{{ $veiculo->ano }}</p>
+                                        <p class="card-text mb-2"><strong>Ano/Modelo: </strong>{{ $veiculo->ano }}</p>
                                         <p class="card-text mb-2"><strong>Condição: </strong>{{ $veiculo->condicao }}</p>
                                         <p class="card-text mb-4"><strong>Quilometragem: </strong>{{ number_format(strval($veiculo->quilometragem),0,",",".") }} km</p>
                                     </div>
