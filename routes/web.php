@@ -49,6 +49,8 @@ Route::group(['prefix' => 'admin', "middleware" => ["auth"], 'as' => 'admin.'], 
     Route::resource('carousel','Cms\CarouselController');
     // Rotas do CRUD das Páginas
     Route::resource('paginas','Cms\PaginaController');
+    // Rota para importar os dados da ItCar
+    Route::get('sincronizar', 'Cms\ImportController@sincronizar')->name('sincronizar');
 });
 
 // Rota para mostrar as informações de uma página
