@@ -9,6 +9,7 @@ use Storage;
 use App\Veiculo;
 use App\Marca;
 use App\VeiculoImagem;
+use App\Equipamento;
 
 class ImportController extends Controller
 {
@@ -38,6 +39,8 @@ class ImportController extends Controller
                 // Feito isso, vamos salva
                 if($newVeiculo->save()) {
                     $this->createGalleryImages($veiculo, $newVeiculo);
+                    // Pega os Equipamentos
+                    $this->setEquipamentos($veiculo, $newVeiculo);
                     $deuCerto = true;
                 } else {
                     $deuCerto = false;
@@ -128,8 +131,25 @@ class ImportController extends Controller
             return intval($marca->id);
         }
         // Se não existir, insere ela e pega o seu ID
-        $newMarca = Marca::create($veiculo->Marca);
+        $newMarca = Marca::create(['nome' => strval($veiculo->Marca)]);
         return intval($newMarca->id);
+    }
+
+    public function setEquipamentos($veiculo, $newVeiculo)
+    {
+        if($veiculo->Equipamentos) {
+            $equipamentosValues = strval($veiculo->Equipamentos);
+            $equipamentos = explode(",", $equipamentosValues);
+            foreach($equipamentos as $equipamentoNome) {
+                $equipamento = Equipamento::where('nome', strval($equipamentoNome))->first();
+                if($equipamento) {
+                    $newVeiculo->equipamentos()->attach($equipamento);
+                } else {
+                    $newEquipamento = Equipamento::create(['nome' => strval($equipamentoNome)]);
+                    $newVeiculo->equipamentos()-> attach($newEquipamento);
+                }
+            }
+        }
     }
 
     /*
