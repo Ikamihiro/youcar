@@ -4,9 +4,7 @@
     <div class="container">
         <div class="card shadow mt-3">
             <div class="card-header bg-secondary h4 text-light">
-                <strong>{{ $veiculo->modelo }}</strong> - 
-                {{ $veiculo->marca->nome }} - 
-                <strong>{{ $veiculo->ano }}</strong>
+                <strong>{{ $veiculo->modelo }}</strong>
             </div>
             <div class="card-body">
                 <div class="row">
@@ -86,6 +84,12 @@
                                     </div>
                                 </div>
                             @endforeach
+                        </div>
+                        <div class="row col-sm-12 col-xs-12 col-md-12 mb-3 h5">
+                            <strong>Detalhes</strong>
+                        </div>
+                        <div class="row col-sm-12 col-xs-12 col-md-12 mb-3 text-justify">
+                            {!! $veiculo->detalhes !!}
                         </div>
                     </div>
                 </div>
