@@ -134,12 +134,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <strong>Combustível:</strong>
-                                <select name="combustivel" id="combustivel" class="form-control">
-                                    <option disabled selected>Selecione o combustivel</option>
-                                    @foreach($combustiveis as $combustivel)
-                                        <option value="{{ $combustivel }}">{{ $combustivel }}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="combustivel" class="form-control" placeholder="Digite o combustível ...">
                             </div>
                         </div>
                     </div>
